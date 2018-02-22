@@ -1,0 +1,38 @@
+/* Button or link */
+a.jqbook {
+  padding: 1px;
+  background: none;
+}
+
+a.jqbook:hover {
+  border: 1px #800;
+}
+
+a.jqbook code {
+  position: relative;
+  padding: 4px 24px 4px 4px;
+  white-space: nowrap;
+}
+
+a.jqbook code::before {
+  content: '';
+}
+
+a.jqbook code::after {
+  content: '»';
+  display: block;
+  position: absolute;
+  top: 1px;
+  right: 12px;
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+
+a.jqbook:hover code::after {
+  transform: rotate(90deg);
+  transition: transform 0.5s;
+}
+
+iframe.jqbook {
+  border: 1px solid #ddd;
+}
