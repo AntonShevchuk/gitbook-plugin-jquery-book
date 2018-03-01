@@ -4,7 +4,6 @@ module.exports = {
   book: {
     assets: './assets',
     js: [
-      'jquery.js',
       'code.js'
     ],
     css: [

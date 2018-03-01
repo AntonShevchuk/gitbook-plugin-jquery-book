@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-jquery-book",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "jQuery plugin for my book",
   "engines": {
     "gitbook": ">1.x.x"

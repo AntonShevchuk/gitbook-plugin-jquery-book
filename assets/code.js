@@ -5,12 +5,14 @@
 require(['jquery'], function ($) {
   'use strict';
   $(function () {
-    $('a.jqbook[data-type="append-style"]').click(appendStyle);
+    $(document).on('click', 'a.jqbook[data-type="append-style"]', appendStyle);
   });
 
-  function appendStyle() {
+  function appendStyle(event) {
+    event.preventDefault();
+
     let $element = $(this);
-    let $target = $($element.attr('href'));
+    let $target = $($element.data('target'));
 
     $target.contents()
       .find('head')
