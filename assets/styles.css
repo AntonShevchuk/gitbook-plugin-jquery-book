@@ -25,6 +25,7 @@ button.jqbook {
 /* wrapper for iframe */
 div.jqbook {
   position: relative;
+  z-index: 999;
 }
 
 /* sticked wrapper */
