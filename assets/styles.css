@@ -1,38 +1,49 @@
-/* Button or link */
+/* link with code */
 a.jqbook {
-  padding: 1px;
-  background: none;
-}
-
-a.jqbook:hover {
-  border: 1px #800;
-}
-
-a.jqbook code {
-  position: relative;
-  padding: 4px 24px 4px 4px;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.85em;
   white-space: nowrap;
+  color: #4183c4;
+  padding: 0.2em 0.6em;
+  margin: 0;
+  background-color: #f7f7f7;
+  border: none;
 }
 
-a.jqbook code::before {
-  content: '';
-}
-
-a.jqbook code::after {
-  content: '»';
-  display: block;
+/* stick button */
+button.jqbook {
   position: absolute;
-  top: 1px;
-  right: 12px;
-  transform: rotate(0deg);
-  transition: transform 0.5s;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
-a.jqbook:hover code::after {
-  transform: rotate(90deg);
-  transition: transform 0.5s;
+/* wrapper for iframe */
+div.jqbook {
+  position: relative;
 }
 
+/* sticked wrapper */
+div.jqbook.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15px;
+}
+
+div.jqbook.sticky button.jqbook {
+  opacity: 1;
+}
+
+/* iframe with code */
 iframe.jqbook {
   border: 1px solid #ddd;
+}
+
+/* change default */
+.markdown-section {
+  overflow: inherit;
 }
