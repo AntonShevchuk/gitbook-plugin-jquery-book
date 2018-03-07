@@ -13,8 +13,8 @@ a.jqbook {
 /* stick button */
 button.jqbook {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -16px;
+  right: -24px;
   font-size: 2em;
   border: none;
   background: transparent;
@@ -26,6 +26,8 @@ button.jqbook {
 div.jqbook {
   position: relative;
   z-index: 999;
+  transform: scale(1);
+  transition: all 700ms;
 }
 
 /* sticked wrapper */
@@ -33,6 +35,8 @@ div.jqbook.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 15px;
+  width: 100%;
+  transform: scale(0.95);
 }
 
 div.jqbook.sticky button.jqbook {
