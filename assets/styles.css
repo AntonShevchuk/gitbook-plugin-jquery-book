@@ -10,16 +10,29 @@ a.jqbook {
   border: none;
 }
 
-/* stick button */
+/* button */
 button.jqbook {
   position: absolute;
-  top: -16px;
-  right: -24px;
-  font-size: 2em;
   border: none;
   background: transparent;
   cursor: pointer;
+  font-size: 2em;
+}
+
+/* stick button */
+button.jqbook.sticky {
+  top: -16px;
+  right: -24px;
   opacity: 0.5;
+}
+
+/* run button */
+button.jqbook.run {
+  right: 14px;
+}
+
+button.jqbook.run:hover {
+  color: #4183c4;
 }
 
 /* wrapper for iframe */
@@ -34,9 +47,10 @@ div.jqbook {
 div.jqbook.sticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 15px;
+  top: 0;
   width: 100%;
   transform: scale(0.95);
+  margin-left: 40px;
 }
 
 div.jqbook.sticky button.jqbook {
