@@ -48,7 +48,7 @@ require(['jquery'], function ($) {
 
     $target.contents()
       .find('head')
-      .append('<script>' + $element.next().text() + '</script>');
+      .append('<script>' + $element.parent().next().text() + '</script>');
 
     return false;
   }
