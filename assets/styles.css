@@ -21,13 +21,28 @@ button.jqbook {
 
 /* stick button */
 button.jqbook.sticky {
-  top: -16px;
+  content: "📌";
+  top: -18px;
   right: -24px;
   opacity: 0.5;
 }
 
+/* reload button */
+button.jqbook.reload {
+  content: "🗘";
+  top: 20px;
+  right: -12px;
+  opacity: 0.5;
+}
+
+button.jqbook.reload:hover {
+  opacity: 1;
+  color: #4183c4;
+}
+
 /* run button */
 button.jqbook.run {
+  content: "▷";
   right: 14px;
 }
 
@@ -59,6 +74,7 @@ div.jqbook.sticky button.jqbook {
 
 /* iframe with code */
 iframe.jqbook {
+  width: 100%;
   border: 1px solid #ddd;
 }
 

@@ -5,12 +5,13 @@
 require(['jquery'], function ($) {
   'use strict';
   $(function () {
-    $(document).on('click', 'a.jqbook[data-type="append-style"]', appendStyle);
-    $(document).on('click', 'a.jqbook[data-type="append-script"]', appendScript);
-    $(document).on('click', 'a.jqbook[data-type="highlight"]', highlight);
-
-    $(document).on('click', 'button.jqbook.sticky', switchSticky);
-    $(document).on('click', 'button.jqbook.run', runScript);
+    $(document)
+      .on('click', 'a.jqbook[data-type="append-style"]', appendStyle)
+      .on('click', 'a.jqbook[data-type="append-script"]', appendScript)
+      .on('click', 'a.jqbook[data-type="highlight"]', highlight)
+      .on('click', 'button.jqbook.sticky', switchSticky)
+      .on('click', 'button.jqbook.reload', reload)
+      .on('click', 'button.jqbook.run', runScript);
   });
 
   function appendStyle(event) {
@@ -68,6 +69,15 @@ require(['jquery'], function ($) {
   function switchSticky(event) {
     event.preventDefault();
     $(this).parent('div.jqbook').toggleClass('sticky');
+    return false;
+  }
+
+  function reload(event) {
+    event.preventDefault();
+
+    let $iframe = $(this).parent('div.jqbook').find('iframe');
+    $iframe.attr('src', $iframe.attr('src'));
+
     return false;
   }
 });
