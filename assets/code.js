@@ -11,7 +11,8 @@ require(['jquery'], function ($) {
       .on('click', 'a.jqbook[data-type="highlight"]', highlight)
       .on('click', 'button.jqbook.sticky', switchSticky)
       .on('click', 'button.jqbook.reload', reload)
-      .on('click', 'button.jqbook.run', runScript);
+      .on('click', 'button.jqbook.run', runScript)
+      .on('click', 'button.jqbook.eval', evalScript);
   });
 
   function appendStyle(event) {
@@ -48,6 +49,17 @@ require(['jquery'], function ($) {
 
     $target.contents()
       .find('head')
+      .append('<script>' + $element.parent().next().text() + '</script>');
+
+    return false;
+  }
+
+  function evalScript(event) {
+    event.preventDefault();
+
+    let $element = $(this);
+
+    $('head')
       .append('<script>' + $element.parent().next().text() + '</script>');
 
     return false;

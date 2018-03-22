@@ -82,6 +82,11 @@ module.exports = {
     // {% jqbRun "#handlers-example" %}{% endjqbRun %}
     jqbRun: function (block) {
       return '<button class="jqbook run" data-target="' + block.args[0] + '">▷</a>';
+    },
+    // <button class="jqbook eval">▷</button>
+    // {% jqbEval %}{% endjqbEval %}
+    jqbEval: function () {
+      return '<button class="jqbook eval">▷</a>';
     }
   },
 

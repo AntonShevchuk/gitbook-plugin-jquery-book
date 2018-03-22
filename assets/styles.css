@@ -41,12 +41,15 @@ button.jqbook.reload:hover {
 }
 
 /* run button */
-button.jqbook.run {
+button.jqbook.run,
+button.jqbook.eval {
   content: "▷";
   right: 14px;
 }
 
-button.jqbook.run:hover {
+button.jqbook.run:hover,
+button.jqbook.eval:hover
+{
   color: #4183c4;
 }
 
