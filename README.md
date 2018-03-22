@@ -53,3 +53,13 @@ Require `id` of target iframe
 ```markdown
 {% jqbHighlight "#html-example" %}$("#content"){% endjqbHighlight %}
 ```
+
+### Create button to eval SCRIPT on book page
+
+It should appended above the block of code:
+```markdown
+{% jqbEval  %}{% endjqbEval %}
+<code>
+alert("Hello!");
+</code>
+```
