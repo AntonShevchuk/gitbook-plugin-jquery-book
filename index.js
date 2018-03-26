@@ -66,7 +66,11 @@ module.exports = {
     // <a class="jqbook" href="#" data-type="append-script" data-target="#html-example">$("#radio-two").prop("disabled", false)</a>
     // {% jqbScript "#html-example" %}$("#radio-two").prop("disabled", false){% endjqbScript %}
     jqbScript: function (block) {
-      return '<a class="jqbook" href="#" data-type="append-script" data-target="' + block.args[0] + '">' + block.body + '</a>';
+      let code = '';
+      if (block.kwargs.hasOwnProperty('code')) {
+        code = ' data-code="' + block.kwargs.code + '"';
+      }
+      return '<a class="jqbook" href="#" data-type="append-script" data-target="' + block.args[0] + '"' + code + '>' + block.body + '</a>';
     },
     // <a class="jqbook" href="#" data-type="append-style" data-target="#html-example">p { color: orange }</a>
     // {% jqbStyle "#html-example" %}p { color: red }{% endjqbStyle %}
@@ -81,12 +85,20 @@ module.exports = {
     // <button class="jqbook run" data-target="#handlers-example">▷</button>
     // {% jqbRun "#handlers-example" %}{% endjqbRun %}
     jqbRun: function (block) {
-      return '<button class="jqbook run" data-target="' + block.args[0] + '">▷</a>';
+      let code = '';
+      if (block.kwargs.hasOwnProperty('code')) {
+        code = ' data-code="' + block.kwargs.code + '"';
+      }
+      return '<button class="jqbook run" data-target="' + block.args[0] + '"' + code + '>▷</a>';
     },
     // <button class="jqbook eval">▷</button>
     // {% jqbEval %}{% endjqbEval %}
-    jqbEval: function () {
-      return '<button class="jqbook eval">▷</a>';
+    jqbEval: function (block) {
+      let code = '';
+      if (block.kwargs.hasOwnProperty('code')) {
+        code = ' data-code="' + block.kwargs.code + '"';
+      }
+      return '<button class="jqbook eval"' + code + '>▷</a>';
     }
   },
 

@@ -15,15 +15,40 @@ require(['jquery'], function ($) {
       .on('click', 'button.jqbook.eval', evalScript);
   });
 
+  /**
+   * Append style to target iframe
+   *
+   * @param target
+   * @param code
+   * @private
+   *
+   * @return void
+   */
+  function _appendStyle(target, code) {
+    $(target).contents()
+      .find('head')
+      .append('<style>' + code + '</style>');
+  }
+
+  /**
+   * Append script to target iframe
+   * @param target
+   * @param code
+   * @private
+   */
+  function _appendScript(target, code) {
+    $(target).contents()
+      .find('head')
+      .append('<script>' + code + '</script>');
+  }
+
   function appendStyle(event) {
     event.preventDefault();
 
     let $element = $(this);
-    let $target = $($element.data('target'));
+    let code = $element.data('code') || $element.text();
 
-    $target.contents()
-      .find('head')
-      .append('<style>' + $element.text() + '</style>');
+    _appendStyle($element.data('target'), code);
 
     return false;
   }
@@ -32,11 +57,9 @@ require(['jquery'], function ($) {
     event.preventDefault();
 
     let $element = $(this);
-    let $target = $($element.data('target'));
+    let code = $element.data('code') || $element.text();
 
-    $target.contents()
-      .find('head')
-      .append('<script>' + $element.text() + '</script>');
+    _appendScript($element.data('target'), code);
 
     return false;
   }
@@ -45,11 +68,20 @@ require(['jquery'], function ($) {
     event.preventDefault();
 
     let $element = $(this);
-    let $target = $($element.data('target'));
+    let code = $element.data('code') || $element.parent().next().text();
 
-    $target.contents()
-      .find('head')
-      .append('<script>' + $element.parent().next().text() + '</script>');
+    _appendScript($element.data('target'), code);
+    return false;
+  }
+
+
+  function highlight(event) {
+    event.preventDefault();
+
+    let $element = $(this);
+    let code = $element.text() + '.effect("highlight", 800)';
+
+    _appendScript($element.data('target'), code);
 
     return false;
   }
@@ -58,22 +90,10 @@ require(['jquery'], function ($) {
     event.preventDefault();
 
     let $element = $(this);
+    let code = $element.data('code') || $element.parent().next().text();
 
     $('head')
-      .append('<script>' + $element.parent().next().text() + '</script>');
-
-    return false;
-  }
-
-  function highlight(event) {
-    event.preventDefault();
-
-    let $element = $(this);
-    let $target = $($element.data('target'));
-
-    $target.contents()
-      .find('head')
-      .append('<script>' + $element.text() + '.effect("highlight", 800)</script>');
+      .append('<script>' + code + '</script>');
 
     return false;
   }
