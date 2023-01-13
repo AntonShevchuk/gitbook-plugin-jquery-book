@@ -17,7 +17,7 @@ module.exports = {
   blocks: {
     // <div class="jqbook">
     // <button class="jqbook sticky">📌</button>
-    // <button class="jqbook reload">🗘</button>
+    // <button class="jqbook reload">↻</button>
     // <iframe class="jqbook" id="click-example" width="100%" height="160px" border="0" src="../code/events.click.html"></iframe>
     // </div>
     // {% jqbFrame "click-example", "../code/events.click.html", height="160px" %}

@@ -39,7 +39,7 @@ Require `id` of target iframe
 
 ### Create button to run SCRIPT
 
-Require `id` of target iframe. It should appended above the block of code:
+Require `id` of the target iframe. It should appended above the block of code:
 ```markdown
 {% jqbRun "#html-example" %}{% endjqbRun %}
 <code>
@@ -49,14 +49,14 @@ alert("Hello!");
 
 ### Create button to highlight elements
 
-Require `id` of target iframe
+Require `id` of the target iframe
 ```markdown
 {% jqbHighlight "#html-example" %}$("#content"){% endjqbHighlight %}
 ```
 
 ### Create button to eval SCRIPT on book page
 
-It should appended above the block of code:
+It should be above the block of the code:
 ```markdown
 {% jqbEval  %}{% endjqbEval %}
 <code>

@@ -1,7 +1,7 @@
 /**
  * @author Anton Shevchuk
  */
-/* global define,require*/
+/* global define, require */
 require(['jquery'], function ($) {
   'use strict';
   $(function () {
